@@ -565,7 +565,7 @@ body{ min-width: 100% !important; /*overflow-y:scroll;*/}
 .header .left{ margin:12px 0 0 30px; font:bold 18px/18px microsoft yahei; color:#c1c1c1;}
 .header .right{ margin-top: 8px;}
 /*.main-right, .main-con{ -webkit-overflow-scrolling:touch; overflow-y:scroll;}*/
-.info-btn{ font-size:18px;}
+.info-btn{ font-size:16px;}
 
 .welcome-txt .txt01{ width:100%;}
 .points{ width:100%; margin-top:20px;}

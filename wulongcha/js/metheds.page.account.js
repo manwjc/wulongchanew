@@ -6,44 +6,58 @@ $(function(){
 		});
 	}
 	
-	//修改状态
-	$(".changeActivityStatus").click(function(){
-		var $this = $(this);
-		if(confirm('确认修改该活动状态？')){
-			$.get('../../commonjs/virtual.data.js', {actId: $this.attr('data-id')}, function(data, status){
-				if(JSON.parse(data)[0].status === '0000'){
-					$this.swapText('启用', '停用');
-					$this.parents('tr').find('.activity-status').swapClass('activity-status bold', 'activity-status red').swapText('已启用', '已停用');
-					alert('状态修改成功！');
-				}
-			});
-		}
-	});
+	//账户管理页面
+	if($('.pagination.account_page').length){
+		$('.pagination.account_page').jqPaginator({
+		    totalPages: 20,
+		    visiblePages: 10,
+		    currentPage: 1,
+		    onPageChange: function (num, type) {
+		        orderVM.getAjax(num);
+		    }
+		});
+	}
 	
-	$('.pagination').jqPaginator({
-	    totalPages: 20,
-	    visiblePages: 10,
-	    currentPage: 1,
-	    onPageChange: function (num, type) {
-	        orderVM.getAjax(num);
-	    }
-	});
-	
+	//角色管理页面
+	if($('.pagination.role_page').length){
+		$('.pagination.role_page').jqPaginator({
+		    totalPages: 20,
+		    visiblePages: 10,
+		    currentPage: 1,
+		    onPageChange: function (num, type) {
+		        orderVM.getAjax(num);
+		    }
+		});
+	}
 });
 
+//账户管理页面
 var orderVM = new Vue({
-	el: '#tableList',
+	el: '#accountTableList',
 	data: {
-		curItemNum: 1,
-		itemIndex: '',
-		hasSelectedNum: 0,
-		list: null,
-		hasNext: true
+		list: null
 	},
 	methods: {
-		
 		getAjax: function(num){
-			var url = "js/itemData.json";		//.js后缀的json文件请求后返回的是blob格式的数据。。。
+			var url = "js/itemData.json";
+	        var _self=this;
+	        
+	       axios.get(url).then(function(response){
+	        	_self.list = response.data[0];
+	        })
+		}
+	}
+})
+
+//角色管理页面
+var orderVM = new Vue({
+	el: '#roleTableList',
+	data: {
+		list: null
+	},
+	methods: {
+		getAjax: function(num){
+			var url = "js/itemData.json";
 	        var _self=this;
 	        
 	       axios.get(url).then(function(response){

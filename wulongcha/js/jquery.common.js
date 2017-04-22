@@ -45,17 +45,38 @@ $(function(){
 		}
 	});
 	
-	$('.btn-delete').click(function(e){
+	
+	/*乌龙茶项目 start 20170422*/
+	
+	//修改状态
+	$(document).on("click", ".changeActivityStatus", function(e){
+		e = event || window.event;
+		e.preventDefault();
+		var $this = $(this);
+		if(confirm('确认修改该活动状态？')){
+			$.get('js/itemdata.json', {actId: $this.attr('data-id')}, function(data, status){
+				if(data[0].status === '0000'){
+					$this.swapText('启用', '停用');
+					$this.parents('tr').find('.activity-status').swapClass('activity-status bold', 'activity-status red').swapText('已启用', '已停用');
+					alert('状态修改成功！');
+				}
+			});
+		}
+	});
+	
+	$(document).on("click", ".btn-delete", function(e){
 		e.preventDefault();
 		var $this = $(this);
 		if(confirm('确定删除该项？')){
-			$.get('../../commonjs/virtual.data.js', {actId: $this.attr('data-id')}, function(data, status){
-				if(JSON.parse(data)[0].status === '0000'){
+			$.get('js/itemdata.json', {actId: $this.attr('data-id')}, function(data, status){
+				if(data[0].status === '0000'){
 					$this.parents('tr').remove();
 				}
 			});
 		}
 	});
+	
+	/*乌龙茶项目 end*/
 	
 	//添加银行卡帐号
 	$('.card-edit-btn').click(function(){
