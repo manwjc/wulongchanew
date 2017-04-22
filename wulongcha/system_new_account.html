@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统管理-账号管理-新增账号</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<div class="info">
+	<form class="inputform">
+        <h2>新增账号</h2>
+        <table class="info-list-02 mtop10" border="0" cellpadding="0" cellspacing="1">
+          <tr>
+            <td width="120" align="right"><span class="red">*</span> 账号：</td>
+            <td><input type="text" class="input_text pp" value="" datatype="*4-20" nullmsg="请输入账号！" errormsg="账号至少由4位字符组成！"></td>
+          </tr>
+          <tr>
+            <td align="right"><span class="red">*</span> 密码：</td>
+            <td><input type="password" class="input_text pp" value="" name="password" datatype="s6-20" nullmsg="请输入新密码！" errormsg="密码至少由6位字符组成！"></td>
+          </tr>
+          <tr>
+            <td align="right"><span class="red">*</span> 确认密码：</td>
+            <td><input type="password" class="input_text pp" value="" name="repassword" datatype="s6-20" recheck="password" nullmsg="请再次输入密码！" errormsg="您两次输入的密码不一致！"></td>
+          </tr>
+          <tr>
+            <td align="right"><span class="red">*</span> 账号角色：</td>
+            <td><input type="checkbox" name="checkRole" datatype="*" nullmsg="请选择账号角色！" /> 系统管理员<input class="mleft10" type="checkbox" name="checkRole" /> 财务<input class="mleft10" type="checkbox" name="checkRole" /> 运营</td>
+          </tr>
+        </table>
+        <div class="padb mtop10"><input class="info-btn manageRepair" type="submit" value="保 存" /></div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.common.js"></script>
+<script type="text/javascript" src="js/Validform_v5.3.2.js"></script>
+<script type="text/javascript" src="js/metheds.page.account.js"></script>
+</html>

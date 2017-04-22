@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统管理-账号管理-新增角色</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<div class="info">
+	<form class="inputform">
+        <h2>新增角色</h2>
+        <table class="info-list-02 mtop10" border="0" cellpadding="0" cellspacing="1">
+          <tr>
+            <td width="120" align="right"><span class="red">*</span> 角色名称：</td>
+            <td><input type="text" class="input_text pp" value="" datatype="*2-20" nullmsg="请输入角色名称！" errormsg="角色名称至少由2位字符组成！"></td>
+          </tr>
+          <tr>
+            <td align="right">描述：</td>
+            <td><input type="text" class="input_text pp" value="" maxlength="50"></td>
+          </tr>
+        </table>
+        <h2 class="mtop20 h30">权限 <input class="dsn" type="checkbox" name="selectRole" datatype="*" nullmsg="请选择角色权限！" /></h2>
+        <ul class="role-box">
+        	<li>
+        		<input class="select-all-role" type="checkbox" name="selectRole" /> 系统管理
+        		<ul class="mleft20">
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 账号管理</li>
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 角色管理</li>
+        		</ul>
+        	</li>
+        	<li>
+        		<input class="select-all-role" type="checkbox" name="selectRole" /> 库存管理
+        		<ul class="mleft20">
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 账号管理</li>
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 角色管理</li>
+        		</ul>
+        	</li>
+        	<li>
+        		<input class="select-all-role" type="checkbox" name="selectRole" /> 在售管理
+        		<ul class="mleft20">
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 账号管理</li>
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 角色管理</li>
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 角色管理</li>
+        			<li><input class="select-role" type="checkbox" name="selectRole" /> 角色管理</li>
+        		</ul>
+        	</li>
+        </ul>
+        <div class="padb mtop10"><input class="info-btn manageRepair" type="submit" value="保 存" /></div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.common.js"></script>
+<script type="text/javascript" src="js/Validform_v5.3.2.js"></script>
+<script type="text/javascript" src="js/metheds.page.account.js"></script>
+</html>

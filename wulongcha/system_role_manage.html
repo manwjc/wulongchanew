@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统管理-角色管理</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.simple-dtpicker.css">
+</head>
+
+<body>
+<div class="info">
+    <h2>角色管理</h2>
+	<form>
+	    <div class="bs-example bgebeb mtop10">
+		        <table class="info-list" border="0">
+		          <tr>
+		            <td><div class="list-name">角色名称：</div></td>
+		            <td><input type="text" class="input_text w120"></td>
+		            <td><div class="list-name">状态：</div></td>
+		            <td>
+		                <select class="select_normal">
+		                    <option>全部</option>
+		                    <option>启用</option>
+		                    <option>禁用</option>
+		                </select>
+		            </td>
+		          </tr>
+		        </table>
+	    </div>
+		<div class="mtop10 t_center">
+			<input class="input-btn w150" type="submit" value="搜索">
+		</div> 
+   </form>
+    <table class="info-list-02 mtop40" border="0" cellpadding="0" cellspacing="1">
+      <thead>
+	      <tr class="title">
+	        <th>序号</th>
+	        <th>角色</th>
+	        <th>角色描述</th>
+	        <th>状态</th>
+	        <th>操作</th>
+	      </tr>
+      </thead>
+      <tbody>
+	      <tr>
+	        <td>1</td>
+	        <td>系统管理员</td>
+	        <td>系统管理所有权限</td>
+	        <td><span class="activity-status red">已停用</span></td>
+	        <td>
+	        	<a class="blue" data-id="a03" href="#">查看</a> <span class="grey">|</span> 
+	        	<a class="blue" data-id="a03" href="#">编辑</a> <span class="grey">|</span> 
+	        	<a class="blue changeActivityStatus" data-id="a03" href="#">启用</a> <span class="grey">|</span> 
+	        	<a class="blue btn-delete" data-id="a03" href="#">删除</a>
+	        </td>
+	      </tr>
+	      <tr>
+	        <td>1</td>
+	        <td>财务</td>
+	        <td>财务相关权限</td>
+	        <td><span class="activity-status red">已停用</span></td>
+	        <td>
+	        	<a class="blue" data-id="a03" href="#">查看</a> <span class="grey">|</span> 
+	        	<a class="blue" data-id="a03" href="#">编辑</a> <span class="grey">|</span> 
+	        	<a class="blue changeActivityStatus" data-id="a03" href="#">启用</a> <span class="grey">|</span> 
+	        	<a class="blue btn-delete" data-id="a03" href="#">删除</a>
+	        </td>
+	      </tr>
+      </tbody>
+    </table>
+	<ul class="pages">
+		<li>共计 108 条记录 </li>
+        <li class="mar-left5"><a href="#">上一页</a></li>
+		<li class="on"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+        <li class="mar-left5">…</li>
+		<li class="mar-left5"><a href="#">10</a></li>
+		<li><a href="#">下一页</a></li>
+        <li class="mar-left5">跳至 <input class="input_text page-num" type="text"> 页 <input class="input-btn mtop3" type="button" value="确定"></li>
+	</ul>
+	<a href="system_new_role.html"><input class="info-btn w150" type="button" value="新增角色"></a>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.common.js"></script>
+<script type="text/javascript" src="js/metheds.page.account.js"></script>
+</html>

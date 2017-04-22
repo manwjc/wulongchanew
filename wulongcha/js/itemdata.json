@@ -1,0 +1,57 @@
+[
+    {
+        "status": "0000", 
+        "dataValue": {
+            "userList": [
+                {
+                    "userId": "38d0a688250011e78b19c45444ab6425", 
+                    "username": "admin", 
+                    "userAccount": "kangduo", 
+                    "mobile": "17688709202", 
+                    "userState": 1, 
+                    "roleList": [
+                        {
+                            "id": "d2aafb9124ff11e78b19c45444ab6425", 
+                            "roleName": "管理员", 
+                            "roleCode": "ROLE_ADMIN"
+                        }
+                    ]
+                }, 
+                {
+                    "userId": "38d0a688250011e78b19c45444ab6425", 
+                    "username": "admin", 
+                    "userAccount": "kangduo", 
+                    "mobile": "17688709202", 
+                    "userState": 1, 
+                    "roleList": [
+                        {
+                            "id": "d2aafb9124ff11e78b19c45444ab6425", 
+                            "roleName": "财务", 
+                            "roleCode": "ROLE_ADMIN"
+                        }, 
+                        {
+                            "id": "d2aafb9124ff11e78b19c45444ab6425", 
+                            "roleName": "销售经理", 
+                            "roleCode": "ROLE_ADMIN"
+                        }
+                    ]
+                }, 
+                {
+                    "userId": "38d0a688250011e78b19c45444ab6425", 
+                    "username": "admin", 
+                    "userAccount": "kangduo", 
+                    "mobile": "17688709202", 
+                    "userState": 0, 
+                    "roleList": [
+                        {
+                            "id": "d2aafb9124ff11e78b19c45444ab6425", 
+                            "roleName": "管理员", 
+                            "roleCode": "ROLE_ADMIN"
+                        }
+                    ]
+                }
+            ], 
+            "total": 3
+        }
+    }
+]

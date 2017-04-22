@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统管理-账号管理</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.simple-dtpicker.css">
+</head>
+
+<body>
+<div class="info">
+    <h2>账号管理</h2>
+	<form>
+	    <div class="bs-example bgebeb mtop10">
+		        <table class="info-list" border="0">
+		          <tr>
+		            <td><div class="list-name">账号：</div></td>
+		            <td><input type="text" class="input_text w120"></td>
+		            <td><div class="list-name">姓名：</div></td>
+		            <td><input type="text" class="input_text w120"></td>
+		            <td><div class="list-name">状态：</div></td>
+		            <td>
+		                <select class="select_normal">
+		                    <option>全部</option>
+		                    <option>启用</option>
+		                    <option>禁用</option>
+		                </select>
+		            </td>
+		          </tr>
+		        </table>
+	    </div>
+		<div class="mtop10 t_center">
+			<input class="input-btn w150" type="submit" value="搜索">
+		</div> 
+   </form>
+    <table id="tableList" class="info-list-02 mtop40" border="0" cellpadding="0" cellspacing="1" v-cloak>
+      <thead>
+	      <tr class="title">
+	        <th>序号</th>
+	        <th>账号</th>
+	        <th>角色</th>
+	        <th>状态</th>
+	        <th>操作</th>
+	      </tr>
+      </thead>
+      <tbody>
+	      <tr v-for="(item, index) of list&&list.dataValue.userList">
+	        <td>{{index + 1}}</td>
+	        <td>{{item.username}}</td>
+	        <td><span v-for="(role, i) of item.roleList">{{role.roleName}}<span v-if="(i+1) !== item.roleList.length"> | </span></span></td>
+	        <td><span v-if="item.userState===0" class="activity-status red">已停用</span><span v-else class="activity-status bold">已启用</span></td>
+	        <td>
+	        	<a v-if="item.userState===0" class="blue changeActivityStatus" data-id="item.userId" href="#">启用</a><a v-else class="blue changeActivityStatus" data-id="item.userId" href="#">停用</a> <span class="grey">|</span> <a class="blue btn-delete" href="#" data-id="a03">删除</a>
+	        </td>
+	      </tr>
+	      <!--<tr>
+	        <td>1</td>
+	        <td>admin</td>
+	        <td>系统管理员</td>
+	        <td><span class="activity-status red">已停用</span></td>
+	        <td>
+	        	<a class="blue changeActivityStatus" data-id="a03" href="#">启用</a> <span class="grey">|</span> <a class="blue btn-delete" href="#" data-id="a03">删除</a>
+	        </td>
+	      </tr>-->
+      </tbody>
+    </table>
+	<ul class="pagination"></ul>
+	<div class="mtop20">
+		<a href="system_new_account.html"><input class="info-btn w150" type="button" value="新增账号"></a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/jqPaginator.min.js"></script>
+<script type="text/javascript" src="js/jquery.common.js"></script>
+<script type="text/javascript" src="js/metheds.page.account.js"></script>
+</html>
