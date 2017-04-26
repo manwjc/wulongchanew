@@ -13,7 +13,7 @@ $(function(){
 		    visiblePages: 10,
 		    currentPage: 1,
 		    onPageChange: function (num, type) {
-		        orderVM.getAjax(num);
+		        accountListVM.getAjax(num);
 		    }
 		});
 	}
@@ -25,14 +25,14 @@ $(function(){
 		    visiblePages: 10,
 		    currentPage: 1,
 		    onPageChange: function (num, type) {
-		        orderVM.getAjax(num);
+		        roleListVM.getAjax(num);
 		    }
 		});
 	}
 });
 
 //账户管理页面
-var orderVM = new Vue({
+var accountListVM = new Vue({
 	el: '#accountTableList',
 	data: {
 		list: null
@@ -50,7 +50,7 @@ var orderVM = new Vue({
 })
 
 //角色管理页面
-var orderVM = new Vue({
+var roleListVM = new Vue({
 	el: '#roleTableList',
 	data: {
 		list: null

@@ -24,30 +24,7 @@ $(function(){
 		$(this).toggleClass('input-btn-hover');
 	});
 	
-	//编辑、删除、添加
-	$('.edit').click(function(){
-		var $this = $(this);
-		var $sibTd = $this.parents('td').siblings('td');
-		if($this.val()=='编辑'){
-			$sibTd.find('input[type=text]').removeClass('input_noborder').addClass('input_text').removeAttr('readonly');
-			$this.val('保存').css('color','#dd4929');
-			$sibTd.find('div.select-box').removeClass();
-			$sibTd.find('select').removeAttr('disabled').removeClass().addClass('select_normal w200');
-		}else{
-			if($sibTd.find('input[type=text]').val() === ''){
-				alert('信息不能为空');
-				return false;
-			}
-			$sibTd.find('input[type=text]').removeClass('input_text').addClass('input_noborder').attr({readonly:'true'});
-			$this.val('编辑').css({color:'#43a8eb'})
-			$sibTd.find('div').addClass('select-box');
-			$sibTd.find('select').removeClass().addClass('select_noborder w200').attr('disabled','true');
-		}
-	});
-	
-	
 	/*乌龙茶项目 start 20170422*/
-	
 	//修改状态
 	$(document).on("click", ".changeActivityStatus", function(e){
 		e = event || window.event;
@@ -75,6 +52,20 @@ $(function(){
 			});
 		}
 	});
+	
+	//页面查看、编辑状态管理
+	if(location.search.indexOf('readonly') > -1){
+		$(".page-title-state").text('查看');
+		$('input').not('.info-btn').attr('disabled',true);
+		$('input.info-btn').val('返 回').parent('div').click(function(){
+			history.back(-1);
+			return false;
+		});
+	}
+	
+	if(location.search.indexOf('editable') > -1){
+		$(".page-title-state").text('编辑');
+	}
 	
 	/*乌龙茶项目 end*/
 	
